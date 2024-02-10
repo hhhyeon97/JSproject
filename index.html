@@ -4,14 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>숫자 맞추기 게임</title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div id="gameContainer">
     <h1>숫자 맞추기 게임</h1>
-    <div id="resultArea"></div>
+    <div id="chanceArea">남은 기회 : 10번</div>
     <input type="number" id="userInput" placeholder="1 ~ 100 중 고르세요 !">
-    <button id="playBtn">Go!</button>
-    <button id="resetBtn">Reset</button>
-    <script src="script.js"></script>
+    <div id="btn">
+    <button id="playBtn" type="button" class="btn btn-dark">Go!</button>
+    <button id="resetBtn"type="button" class="btn btn-dark">Reset </button>
+    </div>
+    <div id="resultArea"></div>
+  </div>
+  <script src="script.js"></script>
   </body>
 </html>
