@@ -19,6 +19,7 @@ let chances = 10
 let gameOver = false
 let chanceArea = document.getElementById("chanceArea")
 let history=[]
+let successArea = document.getElementById("successArea")
 
 // addEventListener (이벤트 이름, 이벤트 발생시 실행할 함수)
 playButton.addEventListener("click",play) // 함수를 매개변수로 넘김 / 함수가 매개변수로 들어갈 땐 ()를 빼야 한다!
@@ -33,6 +34,7 @@ userInput.addEventListener("keydown", function(event) {
     }
 });
 
+
 function pickRandomNum(){
     randomNum = Math.floor(Math.random() *100)+1; // 1 ~ 100까지 범위 설정
     console.log("정답",randomNum);
@@ -45,6 +47,7 @@ function play(){
     //유저가 범위를 넘는 값을 입력할 시 처리
     if(userValue<1 || userValue>100){
         resultArea.textContent="1과 100 사이 숫자를 입력해주세요"
+        resultArea.style.color = "black";
         userInput.value=""
         userInput.focus()
         return; // 남은 기회 줄어들지 않게 처리
@@ -52,7 +55,8 @@ function play(){
 
     //히스토리에 이미 같은 값이 존재한다면
     if(history.includes(userValue)){
-        resultArea.textContent="이미 입력했던 숫자입니다.\n다른 숫자를 입력해주세요."
+        resultArea.innerHTML = "이미 입력했던 숫자입니다.<br>다른 숫자를 입력해주세요!";
+        resultArea.style.color = "black";
         return;
     }
 
@@ -69,8 +73,9 @@ function play(){
         resultArea.textContent = "Down !!!"
         resultArea.style.color = "blue";
     }else {
-        resultArea.textContent = "맞췄습니다 !!!"
+        resultArea.textContent = "(~˘▾˘)~ 맞췄습니다 !!"
         resultArea.style.color = "black";
+        showImage();
         gameOver = true
     }
 
@@ -88,14 +93,34 @@ function play(){
 }
 
 
+function showImage() {
+    var img = document.createElement("img");
+    img.src = "https://i.pinimg.com/originals/05/b8/b1/05b8b1180de632724fc83cc724056d79.gif";
+    successArea.innerHTML = "";
+    successArea.appendChild(img);
+}
+
+function hideImage() {
+    var img = document.querySelector("#successArea img");
+    if (img) {
+        img.remove(); // 이미지 요소 제거
+    }
+}
+
 function reset(){
+
     // 유저 입력창 reset / 새로운 랜덤번호 생성
     userInput.value = ""
     pickRandomNum()
     resultArea.textContent=" "
     chanceArea.textContent="남은 기회 : 10번"
     playButton.disabled = false;
+    gameOver = false;
+    chances =10;
+    history =[];
+    hideImage();
 }
+
 
 
 pickRandomNum()
