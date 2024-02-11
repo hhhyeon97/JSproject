@@ -133,4 +133,14 @@ input {
     input {
         width: 60%;
     }
+    #gameContainer{
+        height:auto;
+        min-height: 300px;
+    }
+    #source {
+        z-index: -1;
+    }
+    #resultArea {
+        margin-bottom:30px;
+    }
   }
