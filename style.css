@@ -128,3 +128,9 @@ input {
     text-underline-offset: 6px;
     color: white;
 }
+
+@media screen and (max-width: 450px) {
+    input {
+        width: 60%;
+    }
+  }

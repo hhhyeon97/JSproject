@@ -120,21 +120,7 @@ function hideImage() {
         successArea.innerHTML = ""; // successArea 내용 제거
     }
 }
-/*
-function showImage() {
-    var img = document.createElement("img");
-    img.src = "https://i.pinimg.com/originals/f7/6c/30/f76c3072010716adda5a65f8bcb2f5d8.gif";
-    successArea.innerHTML = "";
-    successArea.appendChild(img);
-}
 
-function hideImage() {
-    var img = document.querySelector("#successArea img");
-    if (img) {
-        img.remove(); // 이미지 요소 제거
-    }
-}
-*/
 function reset(){
 
     // 유저 입력창 reset / 새로운 랜덤번호 생성
