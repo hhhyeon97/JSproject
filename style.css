@@ -143,4 +143,7 @@ input {
     #resultArea {
         margin-bottom:30px;
     }
+    #successArea img {
+        margin-bottom: 30px;
+    }
   }
