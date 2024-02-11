@@ -113,7 +113,17 @@ input {
     color: white;
 }
 
-#textbgm {
+#textBgm {
     position: relative;
     bottom: 10px;
+}
+
+#source {
+    position:fixed;
+    bottom:10px;
+    color: white;
+    margin-bottom: 5px;
+}
+#source a{
+    text-underline-offset: 6px;
 }
