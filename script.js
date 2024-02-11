@@ -20,6 +20,7 @@ let gameOver = false
 let chanceArea = document.getElementById("chanceArea")
 let history=[]
 let successArea = document.getElementById("successArea")
+let btnArea = document.getElementById("btn")
 
 // addEventListener (이벤트 이름, 이벤트 발생시 실행할 함수)
 playButton.addEventListener("click",play) // 함수를 매개변수로 넘김 / 함수가 매개변수로 들어갈 땐 ()를 빼야 한다!
@@ -73,8 +74,9 @@ function play(){
         resultArea.textContent = "Down !!!"
         resultArea.style.color = "blue";
     }else {
-        resultArea.textContent = "(~˘▾˘)~ 맞췄습니다 !!"
-        resultArea.style.color = "black";
+        //resultArea.textContent = "(~˘▾˘)~ 맞췄습니다 !!"
+        //resultArea.style.color = "black";
+        resultArea.textContent = ""
         showImage();
         gameOver = true
     }
@@ -92,10 +94,36 @@ function play(){
 
 }
 
-
 function showImage() {
     var img = document.createElement("img");
-    img.src = "https://i.pinimg.com/originals/05/b8/b1/05b8b1180de632724fc83cc724056d79.gif";
+    img.src = "https://i.pinimg.com/originals/f7/6c/30/f76c3072010716adda5a65f8bcb2f5d8.gif";
+
+    var textNode = document.createTextNode("맞췄습니다!!!");
+
+    var container = document.createElement("div");
+    container.id = "successArea";
+
+    var span = document.createElement("span");
+    span.appendChild(textNode);
+
+    container.appendChild(img);
+    container.appendChild(span);
+
+    successArea.innerHTML = "";
+    successArea.appendChild(container);
+}
+
+function hideImage() {
+    var img = document.querySelector("#successArea img");
+    if (img) {
+        img.remove(); // 이미지 요소 제거
+        successArea.innerHTML = ""; // successArea 내용 제거
+    }
+}
+/*
+function showImage() {
+    var img = document.createElement("img");
+    img.src = "https://i.pinimg.com/originals/f7/6c/30/f76c3072010716adda5a65f8bcb2f5d8.gif";
     successArea.innerHTML = "";
     successArea.appendChild(img);
 }
@@ -106,7 +134,7 @@ function hideImage() {
         img.remove(); // 이미지 요소 제거
     }
 }
-
+*/
 function reset(){
 
     // 유저 입력창 reset / 새로운 랜덤번호 생성
@@ -124,3 +152,21 @@ function reset(){
 
 
 pickRandomNum()
+
+
+// audio 재생
+const audio = document.getElementById("myAudio"); // 오디오 요소 가져오기
+const playPauseButton = document.getElementById("playPauseButton"); // 버튼 가져오기
+const icon = document.getElementById("icon"); // 아이콘 가져오기
+
+playPauseButton.addEventListener("click", function() {
+    if (audio.paused) {
+        audio.play(); // 일시 중지 상태일 때 재생
+        icon.classList.remove('bx-music'); // 일시 중지 아이콘 클래스 제거
+        icon.classList.add('bxs-music'); // 재생 아이콘 클래스 추가
+    } else {
+        audio.pause(); // 재생 중이면 일시 중지
+        icon.classList.remove('bxs-music'); // 재생 아이콘 클래스 제거
+        icon.classList.add('bx-music'); // 일시 중지 아이콘 클래스 추가
+    }
+});

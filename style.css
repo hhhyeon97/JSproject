@@ -78,10 +78,42 @@ input {
     margin-top:30px;
 }
 
-#successArea img {
-    width: 200px; 
-    height: auto; 
-    border-radius: 50%; 
-    margin-top: 20px;
+
+#successArea {
+    position: relative;
+    display: inline-block;
 }
 
+#successArea img {
+    position: relative;
+    z-index: 1;
+    width: 200px; 
+    height:150px; 
+    border-radius: 50%;
+}
+
+#successArea span {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    z-index: 2;
+    padding: 5px;
+    color: white;
+    font-size: 20px;
+}
+
+#audioArea{
+    position: fixed;
+    top: 20px;
+    right: 10px;
+}
+
+.icon {
+    font-size: 35px;
+    color: white;
+}
+
+#textbgm {
+    position: relative;
+    bottom: 10px;
+}
