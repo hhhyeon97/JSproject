@@ -49,6 +49,7 @@ function play(){
     if(userValue<1 || userValue>100){
         resultArea.textContent="1과 100 사이 숫자를 입력해주세요"
         resultArea.style.color = "black";
+        resultArea.style.fontSize = "20px";
         userInput.value=""
         userInput.focus()
         return; // 남은 기회 줄어들지 않게 처리
@@ -58,6 +59,7 @@ function play(){
     if(history.includes(userValue)){
         resultArea.innerHTML = "이미 입력했던 숫자입니다.<br>다른 숫자를 입력해주세요!";
         resultArea.style.color = "black";
+        resultArea.style.fontSize = "20px";
         return;
     }
 
@@ -70,9 +72,11 @@ function play(){
     if(userValue < randomNum){
         resultArea.textContent = "Up !!!"
         resultArea.style.color = "#c91649";
+        resultArea.style.fontSize = "40px";
     }else if(userValue > randomNum){
         resultArea.textContent = "Down !!!"
         resultArea.style.color = "blue";
+        resultArea.style.fontSize = "40px";
     }else {
         //resultArea.textContent = "(~˘▾˘)~ 맞췄습니다 !!"
         //resultArea.style.color = "black";
