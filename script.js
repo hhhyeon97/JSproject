@@ -32,6 +32,8 @@ userInput.addEventListener("focus",function(){ // (익명함수) 간단한 처�
 userInput.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         play();
+        userInput.value=""
+        userInput.focus()
     }
 });
 
@@ -117,6 +119,8 @@ function showImage() {
 
     successArea.innerHTML = "";
     successArea.appendChild(container);
+
+ 
 }
 
 function hideImage() {
