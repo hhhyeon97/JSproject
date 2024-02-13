@@ -60,6 +60,8 @@ function play(){
         resultArea.innerHTML = "이미 입력했던 숫자입니다.<br>다른 숫자를 입력해주세요!";
         resultArea.style.color = "black";
         resultArea.style.fontSize = "20px";
+        userInput.value = ""
+        userInput.focus()
         return;
     }
 
@@ -147,16 +149,37 @@ pickRandomNum()
 // audio 재생
 const audio = document.getElementById("myAudio"); // 오디오 요소 가져오기
 const playPauseButton = document.getElementById("playPauseButton"); // 버튼 가져오기
-const icon = document.getElementById("icon"); // 아이콘 가져오기
+//const icon = document.getElementById("icon"); // 아이콘 가져오기
+const text = document.getElementById("text"); // 텍스트 가져오기
 
+/*
 playPauseButton.addEventListener("click", function() {
     if (audio.paused) {
         audio.play(); // 일시 중지 상태일 때 재생
-        icon.classList.remove('bx-music'); // 일시 중지 아이콘 클래스 제거
-        icon.classList.add('bxs-music'); // 재생 아이콘 클래스 추가
+       // icon.classList.remove('bx-music'); // 일시 중지 아이콘 클래스 제거
+        //icon.classList.add('bxs-music'); // 재생 아이콘 클래스 추가
+        text.textContent = "OFF"; // 텍스트 변경
     } else {
         audio.pause(); // 재생 중이면 일시 중지
-        icon.classList.remove('bxs-music'); // 재생 아이콘 클래스 제거
-        icon.classList.add('bx-music'); // 일시 중지 아이콘 클래스 추가
+       // icon.classList.remove('bxs-music'); // 재생 아이콘 클래스 제거
+        //icon.classList.add('bx-music'); // 일시 중지 아이콘 클래스 추가
+        text.textContent = "ON"; // 텍스트 변경
+    }
+});
+*/
+
+// 버튼 클릭 이벤트 리스너 추가
+playPauseButton.addEventListener("click", function() {
+    // 오디오가 일시 중지된 경우
+    if (audio.paused) {
+        // 재생 시작
+        audio.play();
+        // 텍스트 및 아이콘 변경
+        text.textContent = "OFF";
+    } else { // 오디오가 재생 중인 경우
+        // 일시 중지
+        audio.pause();
+        // 텍스트 및 아이콘 변경
+        text.textContent = "ON";
     }
 });

@@ -113,6 +113,15 @@ input {
     color: white;
 }
 
+#text {
+    font-size: 20px;
+    color: white;
+    margin-right: 15px;
+    position:relative;
+    bottom: 8px;
+    cursor: pointer;
+}
+
 #textBgm {
     position: relative;
     bottom: 10px;
