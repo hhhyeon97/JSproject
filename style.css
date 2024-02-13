@@ -87,14 +87,14 @@ input {
     position: relative;
     z-index: 1;
     width: 200px; 
-    height:150px; 
+    height:145px; 
     border-radius: 10px;
     z-index : 2;
 }
 
 #successArea span {
     position: absolute;
-    top: 10px;
+    top : -2px;
     left: 25px;
     z-index: 2;
     padding: 5px;
@@ -106,6 +106,7 @@ input {
     position: fixed;
     top: 20px;
     right: 10px;
+    z-index: -10;
 }
 
 .icon {
