@@ -154,7 +154,7 @@ pickRandomNum()
 const audio = document.getElementById("myAudio"); // 오디오 요소 가져오기
 const playPauseButton = document.getElementById("playPauseButton"); // 버튼 가져오기
 //const icon = document.getElementById("icon"); // 아이콘 가져오기
-const text = document.getElementById("text"); // 텍스트 가져오기
+const text = document.getElementById("textAudio"); // 텍스트 가져오기
 
 /*
 playPauseButton.addEventListener("click", function() {
@@ -179,11 +179,11 @@ playPauseButton.addEventListener("click", function() {
         // 재생 시작
         audio.play();
         // 텍스트 및 아이콘 변경
-        text.textContent = "OFF";
+        textAudio.textContent = "OFF";
     } else { // 오디오가 재생 중인 경우
         // 일시 중지
         audio.pause();
         // 텍스트 및 아이콘 변경
-        text.textContent = "ON";
+        textAudio.textContent = "ON";
     }
 });
