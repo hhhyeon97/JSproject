@@ -143,34 +143,22 @@ function reset(){
     chances =10;
     history =[];
     hideImage();
-}
 
+     // 오디오 초기화 및 텍스트 변경
+     audio.pause();
+     audio.currentTime = 0; // 오디오를 처음으로 되감기
+     textAudio.textContent = "ON";
+}
 
 
 pickRandomNum()
 
 
+
 // audio 재생
 const audio = document.getElementById("myAudio"); // 오디오 요소 가져오기
 const playPauseButton = document.getElementById("playPauseButton"); // 버튼 가져오기
-//const icon = document.getElementById("icon"); // 아이콘 가져오기
-const text = document.getElementById("textAudio"); // 텍스트 가져오기
-
-/*
-playPauseButton.addEventListener("click", function() {
-    if (audio.paused) {
-        audio.play(); // 일시 중지 상태일 때 재생
-       // icon.classList.remove('bx-music'); // 일시 중지 아이콘 클래스 제거
-        //icon.classList.add('bxs-music'); // 재생 아이콘 클래스 추가
-        text.textContent = "OFF"; // 텍스트 변경
-    } else {
-        audio.pause(); // 재생 중이면 일시 중지
-       // icon.classList.remove('bxs-music'); // 재생 아이콘 클래스 제거
-        //icon.classList.add('bx-music'); // 일시 중지 아이콘 클래스 추가
-        text.textContent = "ON"; // 텍스트 변경
-    }
-});
-*/
+//const text = document.getElementById("textAudio"); // 텍스트 가져오기
 
 // 버튼 클릭 이벤트 리스너 추가
 playPauseButton.addEventListener("click", function() {
